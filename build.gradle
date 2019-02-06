@@ -1,0 +1,46 @@
+plugins {
+    id 'java'
+}
+
+group 'com.a3.voice'
+version '1.0-SNAPSHOT'
+
+sourceCompatibility = 1.8
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    testCompile group: 'junit', name: 'junit', version: '4.12'
+    compile group: "com.twilio.sdk", name: "twilio", version: "7.17.+"
+    compile group: "com.sparkjava", name: "spark-core", version: "2.7.1"
+    compile group: "org.slf4j", name: "slf4j-simple", version: "1.7.21"
+   
+    // https://mvnrepository.com/artifact/com.carbonfive.com.oracle/ojdbc8 
+   
+    // compile group: 'com.carbonfive.com.oracle', name: 'ojdbc8', version: '12.2.0.1'
+
+    // https://mvnrepository.com/artifact/com.carbonfive.com.oracle/ojdbc8
+    //    compile group: 'com.carbonfive.com.oracle', name: 'ojdbc8', version: '12.2.0.1'
+    // The above ojdbc from repository is not working for some reason for me so I added it manually
+    compile files('libs/ojdbc8.jar')
+
+
+    // https://mvnrepository.com/artifact/com.googlecode.libphonenumber/libphonenumber
+    compile group: 'com.googlecode.libphonenumber', name: 'libphonenumber', version: '8.10.4'
+
+    // Java dotenv port https://github.com/cdimascio/java-dotenv#faq
+    compile 'io.github.cdimascio:java-dotenv:3.1.7'
+
+    compile files('libs/ojdbc8.jar')
+
+
+
+
+
+
+
+
+}
+
