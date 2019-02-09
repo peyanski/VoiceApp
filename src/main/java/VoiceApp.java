@@ -2,17 +2,22 @@ import com.google.i18n.phonenumbers.NumberParseException;
 import com.google.i18n.phonenumbers.PhoneNumberUtil;
 import com.google.i18n.phonenumbers.Phonenumber;
 import com.twilio.twiml.VoiceResponse;
-import com.twilio.twiml.voice.Say;
 import com.twilio.twiml.voice.Play;
-import com.twilio.twiml.voice.Say.Language;
-import com.twilio.rest.api.v2010.account.Call;
-//import com.twilio.type.PhoneNumber;
+import com.twilio.twiml.voice.Say;
+import io.github.cdimascio.dotenv.Dotenv;
 import oracle.jdbc.OracleConnection;
 import oracle.jdbc.pool.OracleDataSource;
-import java.sql.*;
+
+import java.sql.Connection;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
 import java.util.Properties;
-import static spark.Spark.*;
-import io.github.cdimascio.dotenv.Dotenv;
+
+import static spark.Spark.get;
+import static spark.Spark.post;
+
+//import com.twilio.type.PhoneNumber;
 
 public class VoiceApp {
 
@@ -22,13 +27,7 @@ public class VoiceApp {
     private final static String DB_URL = dotenv.get("DB_URL");
     private final static String DB_USER = dotenv.get("DB_USER");
     private final static String DB_PASSWORD = dotenv.get("DB_PASSWORD");
-
-
-
-
-   /* private final static String DB_URL= "jdbc:oracle:thin:@oratdb.mobiltel.bg:1521/gctest";
-    private final static String DB_USER = "ivr_ident";
-    private final static String DB_PASSWORD = "ivr_ident";*/
+    
 
 
 
@@ -118,23 +117,6 @@ public class VoiceApp {
 
          });
 
-
-        /*
-
-        String swissNumberStr = "+359882203797";
-        intToNatNormalization(swissNumberStr);
-
-        String norNumber = "";
-        PhoneNumberUtil phoneUtil = PhoneNumberUtil.getInstance();
-        try {
-            Phonenumber.PhoneNumber swissNumberProto = phoneUtil.parse(swissNumberStr, "BG");
-            System.out.println(phoneUtil.format(swissNumberProto, PhoneNumberUtil.PhoneNumberFormat.NATIONAL));
-            norNumber = phoneUtil.format(swissNumberProto, PhoneNumberUtil.PhoneNumberFormat.NATIONAL);
-            System.out.println(norNumber.replaceAll("\\s+",""));
-
-        } catch (NumberParseException e) {
-            System.err.println("NumberParseException was thrown: " + e.toString());
-        }*/
 
     }
 }
