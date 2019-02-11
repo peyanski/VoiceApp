@@ -13,15 +13,15 @@ The result is then played with the TTS (text to speech) to the caller
 
 ## Used Libraries
 
-Spark Framework - for the web serer
+Spark Framework - for the local web serer
 ojdbc8 - oracle library in order to connect to Oracle DB
-Libphonenumber - for internation to national number conversion
+Libphonenumber - for international to national number conversion
 java-dotenv - for the .env file parsing
 
 
 ## Tests
 
-Describe and show how to run the tests with code examples.
+Several tests that checks for .env file and it's content are included
 
 ## License
 
