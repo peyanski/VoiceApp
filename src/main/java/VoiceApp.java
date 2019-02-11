@@ -27,7 +27,7 @@ public class VoiceApp {
     private final static String DB_URL = dotenv.get("DB_URL");
     private final static String DB_USER = dotenv.get("DB_USER");
     private final static String DB_PASSWORD = dotenv.get("DB_PASSWORD");
-    
+
 
 
 
